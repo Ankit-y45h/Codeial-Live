@@ -2,7 +2,7 @@ import {UPDATE_POSTS} from './actionTypes';
 
 export function fetchPosts() {
   return (dispatch) => {
-    const url = 'https://jsonplaceholder.typicode.com/posts';
+    const url = 'https://dummyjson.com/posts';
     fetch(url)
       .then((response) => {
         console.log('response', response);
