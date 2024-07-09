@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { fetchPosts } from '../actions/posts';
-import { Home, Navbar, Page404 } from './';
+import { Home, Navbar, Page404, Login } from './';
 
-const Login = () => <div>Login</div>;
+
 
 const Signup = () => <div>Signup</div>;
 
@@ -22,7 +22,7 @@ class App extends React.Component {
         <div>
           <Navbar />
 
-          <Switch>
+          <Routes>
             <Route
               exact
               path="/"
@@ -33,7 +33,7 @@ class App extends React.Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route component={Page404} />
-          </Switch>
+          </Routes>
         </div>
       </Router>
     );
