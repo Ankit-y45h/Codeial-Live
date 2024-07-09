@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class PostsList extends Component {
   render() {
@@ -6,11 +7,11 @@ class PostsList extends Component {
     return (
       <div className="posts-list">
         {posts.map((post) => (
-          <div className="post-wrapper" key={post.id}>
+          <div className="post-wrapper" key={post._id}>
             <div className="post-header">
               <div className="post-avatar">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/128/16823/16823195.png"
+                  src="https://image.flaticon.com/icons/svg/2154/2154651.svg"
                   alt="user-pic"
                 />
                 <div>
@@ -23,7 +24,7 @@ class PostsList extends Component {
               <div className="post-actions">
                 <div className="post-like">
                   <img
-                    src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png"
+                    src="https://image.flaticon.com/icons/svg/1077/1077035.svg"
                     alt="likes-icon"
                   />
                   <span>{post.likes.length}</span>
@@ -31,7 +32,7 @@ class PostsList extends Component {
 
                 <div className="post-comments-icon">
                   <img
-                    src="https://cdn-icons-png.flaticon.com/128/1947/1947247.png"
+                    src="https://image.flaticon.com/icons/svg/1380/1380338.svg"
                     alt="comments-icon"
                   />
                   <span>{post.comments.length}</span>
@@ -59,5 +60,9 @@ class PostsList extends Component {
     );
   }
 }
+
+PostsList.propTypes = {
+  posts: PropTypes.array.isRequired,
+};
 
 export default PostsList;
